@@ -7,7 +7,7 @@
 */
 
 import Bus from  '@uci/i2c-bus'
-  ;
+;
 (async () => {
 
   let i2cbus  = new Bus({id:'i2c-bus',tcp:true})

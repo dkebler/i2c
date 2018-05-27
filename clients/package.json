@@ -1,0 +1,17 @@
+{
+  "name": "i2c",
+  "version": "1.0.0",
+  "description": "I2C Bus Client Samples",
+  "author": "David Kebler <d@kebler.net>",
+  "license": "MIT",
+  "scripts": {
+    "scan": "BUS_HOST=sbc node --require esm scan",
+    "relay": "BUS_HOST=sbc I2C_ADDRESS=39 node --require esm relay"
+  },
+  "dependencies": {
+    "@uci/base": "^0.1.6"
+  },
+  "devDependencies": {
+    "esm": "^3.0.38"
+  }
+}

@@ -3,5 +3,16 @@
   "version": "1.0.0",
   "description": "I2C Bus Process and Sockets (for Raspberry Pi only)",
   "author": "David Kebler <d@kebler.net>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "bus": "node --require esm bus",
+    "busd": "DEBUG=true node --require esm bus",
+    "busl": "UCI_LOG=true node --require esm bus"
+  },
+  "dependencies": {
+    "@uci/i2c-bus": "^0.1.6"
+  },
+  "devDependencies": {
+    "esm": "^3.0.38"
+  }
 }
