@@ -1,0 +1,7 @@
+{
+  "name": "i2c",
+  "version": "1.0.0",
+  "description": "I2C Bus Process and Sockets (for Raspberry Pi only)",
+  "author": "David Kebler <d@kebler.net>",
+  "license": "MIT"
+}
