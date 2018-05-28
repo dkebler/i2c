@@ -6,8 +6,9 @@
 
 import Base from  '@uci/base'
 
-const HOST = (process.env.BUS_HOST || 'sbc')
-const ADDRESS = +process.env.I2C_ADDRESS
+const HOST = process.argv[3] || 'sbc'
+const ADDRESS = +process.argv[2]
+// const GPIOA = +process.env.GPIOA || 0x12
 
 console.log(`Sending packets to host:${HOST} at i2c address ${ADDRESS}`)
 
@@ -29,8 +30,11 @@ relays.c = {
 
   await relays.init()
   console.log('=============sending============')
+  // set for separate banks (ICON BANK=1) so works for 08 or 17
+  let packet = {cmd:'write', args:{address:ADDRESS,cmd: 0x0B, byte:128} }
+  await relays.send(packet)
   // configure for outputs if not already
-  let packet = {cmd:'write', args:{address:ADDRESS,cmd: 0, byte:0} }
+  packet = {cmd:'write', args:{address:ADDRESS, cmd: 0, byte:0} }
   await relays.send(packet)
   // turn on all relays
   packet = {cmd:'write', args:{address:ADDRESS,cmd: 9, byte:255} }
