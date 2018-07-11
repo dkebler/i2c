@@ -7,11 +7,13 @@
   "scripts": {
     "scan": "BUS_HOST=sbc node --require esm scan",
     "relay": "BUS_HOST=sbc I2C_ADDRESS=39 node --require esm relay",
-    "mcp": "BUS_HOST=sbc node --require esm mcp"
+    "switch": "node --require esm mcp-switch",
+    "mrelay": "BUS_HOST=sbc node --require esm mcp-relay"
   },
   "dependencies": {
-    "@uci/base": "^0.1.6",
-    "@uci/mcp": "^0.1.3"
+    "@uci/base": "^0.1.8",
+    "@uci/mcp": "^0.1.5",
+    "@uci/socket": "^0.1.5"
   },
   "devDependencies": {
     "esm": "^3.0.38"

@@ -1,5 +1,5 @@
 /*
-* i2c bus with both unix and tcp socket using defaults.  For TCP that is host OS name and port 8080
+*  Direct to mcp chip on i2c-bus using mcp module
 *
 */
 import MCP230XX from '@uci/mcp'

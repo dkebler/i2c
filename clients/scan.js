@@ -26,8 +26,6 @@ scanner.amendConsumerProcessing(reply)
   let packet = {cmd:'scan'}
   console.log('sending', packet)
   await scanner.send(packet)
-  //
-  // await delay(3000)
   process.kill(process.pid, 'SIGTERM')
 
 
