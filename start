@@ -1,2 +1,4 @@
 #!/bin/bash
+sudo pm2 flush
 sudo pm2 start rpi.config.js
+sudo pm2 log interrupt

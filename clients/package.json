@@ -8,12 +8,13 @@
     "scan": "BUS_HOST=sbc node --require esm scan",
     "relay": "BUS_HOST=sbc I2C_ADDRESS=39 node --require esm relay",
     "switch": "node --require esm mcp-switch",
+    "switch2": "node --require esm mcp-switch2",
     "mrelay": "BUS_HOST=sbc node --require esm mcp-relay"
   },
   "dependencies": {
     "@uci/base": "^0.1.8",
-    "@uci/mcp": "^0.1.5",
-    "@uci/socket": "^0.1.5"
+    "@uci/mcp": "^0.1.8",
+    "@uci/socket": "^0.1.9"
   },
   "devDependencies": {
     "esm": "^3.0.38"

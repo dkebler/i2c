@@ -1,9 +1,11 @@
 import {Interrupts} from '@uci/interrupt'
 
-const PINS = [9,10]
+const PINS = [9,10,24]
 const PORT = 9000
 const PATH = 'interrupt' // include a path: option if the code you push to is on the same machine
 const PUSH_CMD = 'pin.interrupt.find'  // default is just 'interrupt' change for use with mcp chips
+const PINOPTS = {wait:20}
+const RESET_CMD = 'pin.interrupt.reset'
 
 let hook = (packet) =>
 {
@@ -13,7 +15,7 @@ let hook = (packet) =>
   return packet
 }
 
-let interrupts  = new Interrupts(PINS,{hook:true, pushcmd:PUSH_CMD, 10:{wait:200}})
+let interrupts  = new Interrupts(PINS,{hook:true, pushcmd:PUSH_CMD, resetCmd:RESET_CMD, 24:PINOPTS, 10:PINOPTS, 9:PINOPTS})
 
 interrupts.setHook(hook)
 
@@ -21,7 +23,6 @@ interrupts.setHook(hook)
 (async () => {
 
   await interrupts.init()
-  // interrupts.fire()
 
 })().catch(err => {
   console.error('FATAL: UNABLE TO START SYSTEM!\n',err)
